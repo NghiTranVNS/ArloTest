@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0137B0F7DD60C84C292DAA /* Pods_ArloTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA96BC4B63E2878D21480447 /* Pods_ArloTest.framework */; };
 		AE219C8B282448C5006B2EE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219C8A282448C5006B2EE3 /* AppDelegate.swift */; };
 		AE219C8D282448C5006B2EE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219C8C282448C5006B2EE3 /* SceneDelegate.swift */; };
 		AE219C8F282448C5006B2EE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219C8E282448C5006B2EE3 /* ViewController.swift */; };
 		AE219C92282448C5006B2EE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE219C90282448C5006B2EE3 /* Main.storyboard */; };
 		AE219C94282448C9006B2EE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE219C93282448C9006B2EE3 /* Assets.xcassets */; };
 		AE219C97282448C9006B2EE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE219C95282448C9006B2EE3 /* LaunchScreen.storyboard */; };
+		AE219CA028245456006B2EE3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219C9F28245456006B2EE3 /* Photo.swift */; };
+		AE219CA328245514006B2EE3 /* PhotoUrlProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CA228245514006B2EE3 /* PhotoUrlProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		561C1E79BE9FAE62F1C93671 /* Pods-ArloTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArloTest.debug.xcconfig"; path = "Target Support Files/Pods-ArloTest/Pods-ArloTest.debug.xcconfig"; sourceTree = "<group>"; };
+		719884DCC164995343C29029 /* Pods-ArloTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArloTest.release.xcconfig"; path = "Target Support Files/Pods-ArloTest/Pods-ArloTest.release.xcconfig"; sourceTree = "<group>"; };
 		AE219C87282448C5006B2EE3 /* ArloTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArloTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE219C8A282448C5006B2EE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE219C8C282448C5006B2EE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		AE219C93282448C9006B2EE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE219C96282448C9006B2EE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE219C98282448C9006B2EE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE219C9F28245456006B2EE3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		AE219CA228245514006B2EE3 /* PhotoUrlProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUrlProvider.swift; sourceTree = "<group>"; };
+		BA96BC4B63E2878D21480447 /* Pods_ArloTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArloTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0137B0F7DD60C84C292DAA /* Pods_ArloTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F19FAA9B14E676EB0863A6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA96BC4B63E2878D21480447 /* Pods_ArloTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BD3609638A6632A8DF86AC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				561C1E79BE9FAE62F1C93671 /* Pods-ArloTest.debug.xcconfig */,
+				719884DCC164995343C29029 /* Pods-ArloTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AE219C7E282448C5006B2EE3 = {
 			isa = PBXGroup;
 			children = (
 				AE219C89282448C5006B2EE3 /* ArloTest */,
 				AE219C88282448C5006B2EE3 /* Products */,
+				1BD3609638A6632A8DF86AC8 /* Pods */,
+				0F19FAA9B14E676EB0863A6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +84,8 @@
 		AE219C89282448C5006B2EE3 /* ArloTest */ = {
 			isa = PBXGroup;
 			children = (
+				AE219CA1282454EC006B2EE3 /* Util */,
+				AE219C9E28245432006B2EE3 /* Model */,
 				AE219C8A282448C5006B2EE3 /* AppDelegate.swift */,
 				AE219C8C282448C5006B2EE3 /* SceneDelegate.swift */,
 				AE219C8E282448C5006B2EE3 /* ViewController.swift */,
@@ -67,6 +97,22 @@
 			path = ArloTest;
 			sourceTree = "<group>";
 		};
+		AE219C9E28245432006B2EE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE219C9F28245456006B2EE3 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE219CA1282454EC006B2EE3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AE219CA228245514006B2EE3 /* PhotoUrlProvider.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE219C9B282448C9006B2EE3 /* Build configuration list for PBXNativeTarget "ArloTest" */;
 			buildPhases = (
+				767DAFB39143B148DEB52E53 /* [CP] Check Pods Manifest.lock */,
 				AE219C83282448C5006B2EE3 /* Sources */,
 				AE219C84282448C5006B2EE3 /* Frameworks */,
 				AE219C85282448C5006B2EE3 /* Resources */,
+				38FDFB96264C203BA144191C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +181,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38FDFB96264C203BA144191C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArloTest/Pods-ArloTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArloTest/Pods-ArloTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArloTest/Pods-ArloTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		767DAFB39143B148DEB52E53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArloTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AE219C83282448C5006B2EE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE219CA028245456006B2EE3 /* Photo.swift in Sources */,
 				AE219C8F282448C5006B2EE3 /* ViewController.swift in Sources */,
 				AE219C8B282448C5006B2EE3 /* AppDelegate.swift in Sources */,
 				AE219C8D282448C5006B2EE3 /* SceneDelegate.swift in Sources */,
+				AE219CA328245514006B2EE3 /* PhotoUrlProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +376,7 @@
 		};
 		AE219C9C282448C9006B2EE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 561C1E79BE9FAE62F1C93671 /* Pods-ArloTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +405,7 @@
 		};
 		AE219C9D282448C9006B2EE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 719884DCC164995343C29029 /* Pods-ArloTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
