@@ -77,6 +77,10 @@ extension SpringBoardCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2.0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets.init(top: 0, left: viewModel.pageMargin, bottom: 0, right: viewModel.pageMargin)
+    }
 }
 
 extension SpringBoardCollectionViewCell: UICollectionViewDelegate {

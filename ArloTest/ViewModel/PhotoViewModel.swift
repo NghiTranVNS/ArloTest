@@ -12,6 +12,7 @@ class PhotoViewModel: NSObject {
     let width = 7
     let height = 10
     let numberOfItemsPerPage: Int = 70
+    let pageMargin: CGFloat = 32
     let reloadTitle = "Reload All"
     let storedPhotoKey = "storedPhotoKey"
     
@@ -46,7 +47,7 @@ class PhotoViewModel: NSObject {
     
     func initializePhoto() {
         photoSections.removeAll()
-        for section in 0...0 {
+        for section in 0...1 {
             var photos: [Photo] = []
             for row in 0...(numberOfItemsPerPage - 1) {
                 photos.append(Photo(urlString: "", section: section, row: row))
@@ -67,7 +68,7 @@ class PhotoViewModel: NSObject {
     private func calculateCellSize() {
         // Get main screen bounds
         let screenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = screenSize.width
+        let screenWidth = screenSize.width - pageMargin * 2
         
         let cellWidth = screenWidth / CGFloat(width) - 2
         let cellHeight = cellWidth
@@ -78,7 +79,7 @@ class PhotoViewModel: NSObject {
     private func calculatePageSize() {
         let screenSize: CGRect = UIScreen.main.bounds
         let pageWidth = screenSize.width
-        let pageHeight = pageWidth * CGFloat(height) / CGFloat(width)
+        let pageHeight = (pageWidth - pageMargin * 2) * CGFloat(height) / CGFloat(width)
         
         self.pageSize = CGSize(width: pageWidth, height: pageHeight)
     }
