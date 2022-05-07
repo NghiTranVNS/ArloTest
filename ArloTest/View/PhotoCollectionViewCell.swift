@@ -20,33 +20,36 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         self.imageView.layer.cornerRadius = 7.0
         self.imageView.clipsToBounds = true
     }
+    
+    private func downloadImage(url: String) {
+        if let url = URL(string: url) {
+            indicatorView.startAnimating()
+            imageView.kf.setImage(with: url, placeholder: nil, options: nil) { [weak self] result in
+                self?.indicatorView.stopAnimating()
+            }
+        }
+    }
 
     func displayPhoto(_ photo: Photo) {
         imageView.image = nil
         indicatorView.stopAnimating()
         
         if photo.urlString.count > 0 {
-            if let url = URL(string: photo.urlString) {
-                indicatorView.startAnimating()
-                imageView.kf.setImage(with: url, placeholder: nil, options: nil) { [weak self] result in
-                    self?.indicatorView.stopAnimating()
-                }
-            }
+            self.downloadImage(url: photo.urlString)
+        }
+        else if !photo.isLoadingURL {
+            indicatorView.startAnimating()
+            photo.requestURL()
+            
+//            indicatorView.startAnimating()
+//            photo.requestURL { [weak self] (urlString, _, _) in
+//                DispatchQueue.main.async {
+//                    self?.downloadImage(url: urlString)
+//                }
+//            }
         }
         else {
             indicatorView.startAnimating()
-            photo.requestURL { [weak self] urlString in
-                DispatchQueue.main.async {
-                    if let url = URL(string: photo.urlString) {
-                        self?.imageView.kf.setImage(with: url, placeholder: nil, options: nil) { [weak self] result in
-                            self?.indicatorView.stopAnimating()
-                        }
-                    }
-                    else {
-                        self?.indicatorView.stopAnimating()
-                    }
-                }
-            }
         }
     }
 }

@@ -28,7 +28,25 @@ class SpringBoardCollectionViewCell: UICollectionViewCell {
         self.photos = photos
         self.viewModel = viewModel
         
+        for photo in self.photos {
+            photo.loadingURLCompletion = { [weak self] (_, section, row) in
+                DispatchQueue.main.async {
+//                    self?.collectionView.reloadItems(at: [IndexPath(row: row, section: 0)])
+                    self?.collectionView.reloadData()
+                }
+            }
+        }
+        
         collectionView.reloadData()
+    }
+    
+    func appendNewPhoto(_ photo: Photo, atIndex indexPath: IndexPath) {
+        self.photos.append(photo)
+        collectionView.performBatchUpdates({
+            self.collectionView.insertItems(at: [indexPath])
+        }, completion: { _ in
+            
+        })
     }
 }
 

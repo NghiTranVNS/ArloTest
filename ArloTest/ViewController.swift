@@ -36,7 +36,26 @@ class ViewController: UIViewController {
 extension ViewController {
     func bindViewModel() {
         viewModel.didAddNewPhoto = { [weak self] photo in
+            guard let indexPath = self?.viewModel.lastIndexPath() else { return }
+            guard let strongSelf = self else { return }
             
+            strongSelf.collectionView.performBatchUpdates({
+                if indexPath.row == 0 {
+                    strongSelf.collectionView.insertSections(IndexSet(integer: indexPath.section))
+                }
+                else {
+                    strongSelf.collectionView.reloadSections(IndexSet(integer: indexPath.section))
+//                    if let lastPageCell = strongSelf.collectionView.cellForItem(at: IndexPath(row: 0, section: indexPath.section)) as? SpringBoardCollectionViewCell {
+//                        lastPageCell.appendNewPhoto(photo, atIndex: IndexPath(row: indexPath.row, section: 0))
+//                    }
+                }
+            }, completion: { _ in
+                guard let currentIndex = strongSelf.collectionView.indexPathsForVisibleItems.first else { return }
+                if currentIndex.section < strongSelf.viewModel.photoSections.count - 1 {
+                    let rightX = CGFloat(strongSelf.viewModel.photoSections.count - 1) * strongSelf.viewModel.pageSize.width
+                    strongSelf.collectionView.setContentOffset(CGPoint(x: rightX, y: 0), animated: true)
+                }
+            })
         }
         
         viewModel.didReloadAll = { [weak self] in

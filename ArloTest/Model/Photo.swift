@@ -8,29 +8,42 @@
 import UIKit
 
 class Photo: NSObject, NSCoding {
-    var ID: Int = 0
     var urlString: String = ""
-    var loadingURL: Bool = false
-    var loadingURLCompletion: ((String) -> Void)?
     
-    func requestURL(completion: @escaping (String) -> Void) {
-        self.loadingURL = true
-        self.loadingURLCompletion = completion
+    var section: Int = 0
+    var row: Int = 0
+    var isLoadingURL: Bool = false
+    var loadingURLCompletion: ((String, Int, Int) -> Void)?
+    
+    func requestURL() {
+        self.isLoadingURL = true
         PhotoUrlProvider().requestNewPhotoURL { [weak self] _urlString in
-            self?.loadingURL = false
-            self?.urlString = _urlString
-            self?.loadingURLCompletion?(_urlString)
+            guard let strongSelf = self else { return }
+            strongSelf.isLoadingURL = false
+            strongSelf.urlString = _urlString
+            strongSelf.loadingURLCompletion?(_urlString, strongSelf.section, strongSelf.row)
+        }
+    }
+    
+    func requestURL(completion: @escaping (String, Int, Int) -> Void) {
+        self.isLoadingURL = true
+        PhotoUrlProvider().requestNewPhotoURL { [weak self] _urlString in
+            guard let strongSelf = self else { return }
+            strongSelf.isLoadingURL = false
+            strongSelf.urlString = _urlString
+            completion(_urlString, strongSelf.section, strongSelf.row)
         }
     }
     
     //MARK: - NSCoding
     func encode(with coder: NSCoder) {
-        coder.encode(ID, forKey: "ID")
         coder.encode(urlString, forKey: "urlString")
     }
 
-    init(urlString: String) {
+    init(urlString: String, section: Int, row: Int) {
         self.urlString = urlString
+        self.section = section
+        self.row = row
     }
     
     override init() {
@@ -40,6 +53,5 @@ class Photo: NSObject, NSCoding {
     required init?(coder: NSCoder) {
         super.init()
         self.urlString = (coder.decodeObject(forKey: "urlString") as? String) ?? ""
-        self.ID = coder.decodeInteger(forKey: "ID")
     }
 }

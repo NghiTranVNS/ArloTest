@@ -23,6 +23,7 @@
 		AE219CB228266805006B2EE3 /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CB128266805006B2EE3 /* NSObject+Ext.swift */; };
 		AE219CB5282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CB3282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift */; };
 		AE219CB6282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE219CB4282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib */; };
+		AE219CBA2826B44E006B2EE3 /* Photo+ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CB92826B44E006B2EE3 /* Photo+ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		AE219CB128266805006B2EE3 /* NSObject+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 		AE219CB3282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringBoardCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE219CB4282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringBoardCollectionViewCell.xib; sourceTree = "<group>"; };
+		AE219CB92826B44E006B2EE3 /* Photo+ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+ImageDownloader.swift"; sourceTree = "<group>"; };
 		BA96BC4B63E2878D21480447 /* Pods_ArloTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArloTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				AE219C9F28245456006B2EE3 /* Photo.swift */,
+				AE219CB92826B44E006B2EE3 /* Photo+ImageDownloader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				AE219CB5282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift in Sources */,
 				AE219C8F282448C5006B2EE3 /* ViewController.swift in Sources */,
 				AE219C8B282448C5006B2EE3 /* AppDelegate.swift in Sources */,
+				AE219CBA2826B44E006B2EE3 /* Photo+ImageDownloader.swift in Sources */,
 				AE219CAB28246567006B2EE3 /* PhotoCollectionViewCell.swift in Sources */,
 				AE219C8D282448C5006B2EE3 /* SceneDelegate.swift in Sources */,
 				AE219CA328245514006B2EE3 /* PhotoUrlProvider.swift in Sources */,

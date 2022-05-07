@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class PhotoViewModel: NSObject {
     let width = 7
@@ -35,20 +36,20 @@ class PhotoViewModel: NSObject {
     }
     
     func initializeWithStoredPhotos() -> Bool {
-        guard let photoSectionStrings = UserDefaults.standard.array(forKey: storedPhotoKey) as? [[String]] else { return false }
-        
-        self.photoSections = photoSectionStrings.compactMap({$0.compactMap { urlString in
-            return Photo(urlString: urlString)
-        }})
+//        guard let photoSectionStrings = UserDefaults.standard.array(forKey: storedPhotoKey) as? [[String]] else { return false }
+//
+//        self.photoSections = photoSectionStrings.compactMap({$0.compactMap { urlString in
+//            return Photo(urlString: urlString, section: 0, row: 0)
+//        }})
         return true
     }
     
     func initializePhoto() {
         photoSections.removeAll()
-        for _ in 0...1 {
+        for section in 0...0 {
             var photos: [Photo] = []
-            for _ in 0...(numberOfItemsPerPage - 1) {
-                photos.append(Photo())
+            for row in 0...(numberOfItemsPerPage - 1) {
+                photos.append(Photo(urlString: "", section: section, row: row))
             }
             photoSections.append(photos)
         }
@@ -85,10 +86,17 @@ class PhotoViewModel: NSObject {
     func addNewPhoto() {
         let photo = Photo()
         if var lastSection = photoSections.last {
+            let sectionIndex = photoSections.count - 1
             if lastSection.count < self.numberOfItemsPerPage {
+                let rowIndex = lastSection.count
+                photo.section = sectionIndex
+                photo.row = rowIndex
                 lastSection.append(photo)
+                
+                photoSections[sectionIndex] = lastSection
             }
             else {
+                photo.section = sectionIndex + 1
                 photoSections.append([photo])
             }
         }
@@ -102,5 +110,20 @@ class PhotoViewModel: NSObject {
     func reloadAll() {
         initializePhoto()
         didReloadAll?()
+    }
+    
+    //MARK: - Utils
+    func lastIndexPath() -> IndexPath? {
+        let section = photoSections.count - 1
+        guard section >= 0 else {
+            return nil
+        }
+        
+        let row = photoSections[section].count - 1
+        guard row >= 0 else {
+            return nil
+        }
+        
+        return IndexPath(row: row, section: section)
     }
 }
