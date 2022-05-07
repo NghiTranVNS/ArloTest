@@ -16,10 +16,10 @@ class PhotoUrlProvider: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
     func myHandler(data: Data!, response: URLResponse!, error: Error!) -> Void {
 
-        // In this case the “encoding” is NSASCIIStringEnconding. It depends on the website.
-        let responseBody = String(data: data, encoding: String.Encoding.ascii)
-
-        print(responseBody ?? "")
+//        // In this case the “encoding” is NSASCIIStringEnconding. It depends on the website.
+//        let responseBody = String(data: data, encoding: String.Encoding.ascii)
+//
+//        print(responseBody ?? "")
     }
     
     func requestNewPhotoURL(completionHandler: @escaping (_ urlString: String) -> Void) {
@@ -27,6 +27,7 @@ class PhotoUrlProvider: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         
         let session = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: self, delegateQueue: OperationQueue())
         let data = session.dataTask(with: URL(string: PhotoUrlProvider.basePhotoURLString)!, completionHandler: myHandler)
+        
         data.resume()
     }
     
@@ -40,6 +41,7 @@ class PhotoUrlProvider: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         
         self.photoURLString = urlString
         self.completion?(urlString)
+        print(urlString)
         completionHandler(nil)
     }
 }

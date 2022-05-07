@@ -16,6 +16,13 @@
 		AE219C97282448C9006B2EE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE219C95282448C9006B2EE3 /* LaunchScreen.storyboard */; };
 		AE219CA028245456006B2EE3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219C9F28245456006B2EE3 /* Photo.swift */; };
 		AE219CA328245514006B2EE3 /* PhotoUrlProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CA228245514006B2EE3 /* PhotoUrlProvider.swift */; };
+		AE219CA8282463DD006B2EE3 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CA7282463DD006B2EE3 /* PhotoViewModel.swift */; };
+		AE219CAB28246567006B2EE3 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CA928246567006B2EE3 /* PhotoCollectionViewCell.swift */; };
+		AE219CAC28246567006B2EE3 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE219CAA28246567006B2EE3 /* PhotoCollectionViewCell.xib */; };
+		AE219CAF28266541006B2EE3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CAE28266541006B2EE3 /* BaseView.swift */; };
+		AE219CB228266805006B2EE3 /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CB128266805006B2EE3 /* NSObject+Ext.swift */; };
+		AE219CB5282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE219CB3282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift */; };
+		AE219CB6282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE219CB4282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,13 @@
 		AE219C98282448C9006B2EE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE219C9F28245456006B2EE3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		AE219CA228245514006B2EE3 /* PhotoUrlProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUrlProvider.swift; sourceTree = "<group>"; };
+		AE219CA7282463DD006B2EE3 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		AE219CA928246567006B2EE3 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE219CAA28246567006B2EE3 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		AE219CAE28266541006B2EE3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		AE219CB128266805006B2EE3 /* NSObject+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
+		AE219CB3282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringBoardCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE219CB4282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringBoardCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA96BC4B63E2878D21480447 /* Pods_ArloTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArloTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +98,8 @@
 		AE219C89282448C5006B2EE3 /* ArloTest */ = {
 			isa = PBXGroup;
 			children = (
+				AE219CA62824639E006B2EE3 /* View */,
+				AE219CA528246388006B2EE3 /* ViewModel */,
 				AE219CA1282454EC006B2EE3 /* Util */,
 				AE219C9E28245432006B2EE3 /* Model */,
 				AE219C8A282448C5006B2EE3 /* AppDelegate.swift */,
@@ -108,9 +124,30 @@
 		AE219CA1282454EC006B2EE3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AE219CB128266805006B2EE3 /* NSObject+Ext.swift */,
 				AE219CA228245514006B2EE3 /* PhotoUrlProvider.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		AE219CA528246388006B2EE3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AE219CA7282463DD006B2EE3 /* PhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AE219CA62824639E006B2EE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE219CAE28266541006B2EE3 /* BaseView.swift */,
+				AE219CA928246567006B2EE3 /* PhotoCollectionViewCell.swift */,
+				AE219CAA28246567006B2EE3 /* PhotoCollectionViewCell.xib */,
+				AE219CB3282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift */,
+				AE219CB4282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,8 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE219C97282448C9006B2EE3 /* LaunchScreen.storyboard in Resources */,
+				AE219CAC28246567006B2EE3 /* PhotoCollectionViewCell.xib in Resources */,
 				AE219C94282448C9006B2EE3 /* Assets.xcassets in Resources */,
 				AE219C92282448C5006B2EE3 /* Main.storyboard in Resources */,
+				AE219CB6282669DC006B2EE3 /* SpringBoardCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +268,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE219CA028245456006B2EE3 /* Photo.swift in Sources */,
+				AE219CA8282463DD006B2EE3 /* PhotoViewModel.swift in Sources */,
+				AE219CB5282669DC006B2EE3 /* SpringBoardCollectionViewCell.swift in Sources */,
 				AE219C8F282448C5006B2EE3 /* ViewController.swift in Sources */,
 				AE219C8B282448C5006B2EE3 /* AppDelegate.swift in Sources */,
+				AE219CAB28246567006B2EE3 /* PhotoCollectionViewCell.swift in Sources */,
 				AE219C8D282448C5006B2EE3 /* SceneDelegate.swift in Sources */,
 				AE219CA328245514006B2EE3 /* PhotoUrlProvider.swift in Sources */,
+				AE219CAF28266541006B2EE3 /* BaseView.swift in Sources */,
+				AE219CB228266805006B2EE3 /* NSObject+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -364,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -382,7 +426,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7B2H5R4JD5;
+				DEVELOPMENT_TEAM = 4QRG6Q8L53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArloTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -395,7 +439,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dev.ArloTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.verik.owi.hex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -411,7 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7B2H5R4JD5;
+				DEVELOPMENT_TEAM = 4QRG6Q8L53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArloTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -424,7 +468,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dev.ArloTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.verik.owi.hex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

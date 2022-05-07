@@ -8,9 +8,17 @@
 import UIKit
 
 class Photo: NSObject {
-    let urlString: String
+    var urlString: String = ""
+    var loadingURL: Bool = false
+    var loadingURLCompletion: ((String) -> Void)?
     
-    init(_ urlString: String) {
-        self.urlString = urlString
+    func requestURL(completion: @escaping (String) -> Void) {
+        self.loadingURL = true
+        self.loadingURLCompletion = completion
+        PhotoUrlProvider().requestNewPhotoURL { [weak self] _urlString in
+            self?.loadingURL = false
+            self?.urlString = _urlString
+            self?.loadingURLCompletion?(_urlString)
+        }
     }
 }
