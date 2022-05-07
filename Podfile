@@ -7,6 +7,5 @@ target 'ArloTest' do
 
   # Pods for LazyLoading
   pod 'Kingfisher', '~> 7.2.1'
-  pod 'SnapKit'
 
 end
