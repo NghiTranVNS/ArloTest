@@ -14,7 +14,6 @@ class PhotoViewModel: NSObject {
     let numberOfItemsPerPage: Int = 70
     let pageMargin: CGFloat = 32
     let reloadTitle = "Reload All"
-    let storedPhotoKey = "storedPhotoKey"
     
     var didAddNewPhoto: ((Photo) -> Void)?
     var didReloadAll: (() -> Void)?
@@ -28,21 +27,7 @@ class PhotoViewModel: NSObject {
         
         self.calculateCellSize()
         self.calculatePageSize()
-        
-//        if !initializeWithStoredPhotos() {
-//            self.initializePhoto()
-//        }
-        
         self.initializePhoto()
-    }
-    
-    func initializeWithStoredPhotos() -> Bool {
-//        guard let photoSectionStrings = UserDefaults.standard.array(forKey: storedPhotoKey) as? [[String]] else { return false }
-//
-//        self.photoSections = photoSectionStrings.compactMap({$0.compactMap { urlString in
-//            return Photo(urlString: urlString, section: 0, row: 0)
-//        }})
-        return true
     }
     
     func initializePhoto() {
@@ -54,16 +39,8 @@ class PhotoViewModel: NSObject {
             }
             photoSections.append(photos)
         }
-        
-        catchPhotos()
     }
-    
-    func catchPhotos() {
-//        UserDefaults.standard.setValue(photoSections.compactMap({ $0.compactMap { photo in
-//            photo.urlString
-//        } }), forKey: storedPhotoKey)
-//        UserDefaults.standard.synchronize()
-    }
+
     
     private func calculateCellSize() {
         // Get main screen bounds

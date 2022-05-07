@@ -40,13 +40,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         else if !photo.isLoadingURL {
             indicatorView.startAnimating()
             photo.requestURL()
-            
-//            indicatorView.startAnimating()
-//            photo.requestURL { [weak self] (urlString, _, _) in
-//                DispatchQueue.main.async {
-//                    self?.downloadImage(url: urlString)
-//                }
-//            }
         }
         else {
             indicatorView.startAnimating()

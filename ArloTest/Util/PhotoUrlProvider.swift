@@ -15,11 +15,6 @@ class PhotoUrlProvider: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     private var completion: ((String) -> Void)?
     
     func myHandler(data: Data!, response: URLResponse!, error: Error!) -> Void {
-
-//        // In this case the “encoding” is NSASCIIStringEnconding. It depends on the website.
-//        let responseBody = String(data: data, encoding: String.Encoding.ascii)
-//
-//        print(responseBody ?? "")
     }
     
     func requestNewPhotoURL(completionHandler: @escaping (_ urlString: String) -> Void) {

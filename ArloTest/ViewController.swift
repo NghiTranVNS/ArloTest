@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         collectionView.register(UINib(nibName: "SpringBoardCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SpringBoardCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
+        reloadAllButton.setTitle(viewModel.reloadTitle, for: .normal)
         
         bindViewModel()
     }
@@ -45,9 +46,6 @@ extension ViewController {
                 }
                 else {
                     strongSelf.collectionView.reloadSections(IndexSet(integer: indexPath.section))
-//                    if let lastPageCell = strongSelf.collectionView.cellForItem(at: IndexPath(row: 0, section: indexPath.section)) as? SpringBoardCollectionViewCell {
-//                        lastPageCell.appendNewPhoto(photo, atIndex: IndexPath(row: indexPath.row, section: 0))
-//                    }
                 }
             }, completion: { _ in
                 guard let currentIndex = strongSelf.collectionView.indexPathsForVisibleItems.first else { return }
@@ -61,18 +59,7 @@ extension ViewController {
         viewModel.didReloadAll = { [weak self] in
             self?.collectionView.reloadData()
         }
-        
-//        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.onAppWillTerminate(notification:)), name: UIApplication.willTerminateNotification, object:nil)
-//        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.onAppWillEnterBackground(notification:)), name: UIApplication.didEnterBackgroundNotification, object:nil)
     }
-    
-//    @objc func onAppWillTerminate(notification:Notification) {
-//        viewModel.catchPhotos()
-//    }
-//
-//    @objc func onAppWillEnterBackground(notification:Notification) {
-//        viewModel.catchPhotos()
-//    }
 }
 
 extension ViewController: UICollectionViewDataSource {

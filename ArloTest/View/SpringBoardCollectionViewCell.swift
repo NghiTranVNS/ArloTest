@@ -31,8 +31,7 @@ class SpringBoardCollectionViewCell: UICollectionViewCell {
         for photo in self.photos {
             photo.loadingURLCompletion = { [weak self] (_, section, row) in
                 DispatchQueue.main.async {
-//                    self?.collectionView.reloadItems(at: [IndexPath(row: row, section: 0)])
-                    self?.collectionView.reloadData()
+                    self?.collectionView.reloadItems(at: [IndexPath(row: row, section: 0)])
                 }
             }
         }
