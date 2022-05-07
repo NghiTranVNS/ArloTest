@@ -16,37 +16,51 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        PhotoUrlProvider().requestNewPhotoURL { urlString in
-//            print(urlString)
-//        }
-//
-//        PhotoUrlProvider().requestNewPhotoURL { urlString in
-//            print(urlString)
-//        }
-//
-//        PhotoUrlProvider().requestNewPhotoURL { urlString in
-//            print(urlString)
-//        }
-        
+    
         collectionView.register(UINib(nibName: "SpringBoardCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SpringBoardCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        bindViewModel()
     }
     
     @IBAction func reloadAllButtonTapped(_ sender: Any) {
-        
+        viewModel.reloadAll()
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        
+        viewModel.addNewPhoto()
     }
+}
+
+extension ViewController {
+    func bindViewModel() {
+        viewModel.didAddNewPhoto = { [weak self] photo in
+            
+        }
+        
+        viewModel.didReloadAll = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+        
+//        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.onAppWillTerminate(notification:)), name: UIApplication.willTerminateNotification, object:nil)
+//        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.onAppWillEnterBackground(notification:)), name: UIApplication.didEnterBackgroundNotification, object:nil)
+    }
+    
+//    @objc func onAppWillTerminate(notification:Notification) {
+//        viewModel.catchPhotos()
+//    }
+//
+//    @objc func onAppWillEnterBackground(notification:Notification) {
+//        viewModel.catchPhotos()
+//    }
 }
 
 extension ViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.photoSections.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }

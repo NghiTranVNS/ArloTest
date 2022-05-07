@@ -7,7 +7,8 @@
 
 import UIKit
 
-class Photo: NSObject {
+class Photo: NSObject, NSCoding {
+    var ID: Int = 0
     var urlString: String = ""
     var loadingURL: Bool = false
     var loadingURLCompletion: ((String) -> Void)?
@@ -20,5 +21,25 @@ class Photo: NSObject {
             self?.urlString = _urlString
             self?.loadingURLCompletion?(_urlString)
         }
+    }
+    
+    //MARK: - NSCoding
+    func encode(with coder: NSCoder) {
+        coder.encode(ID, forKey: "ID")
+        coder.encode(urlString, forKey: "urlString")
+    }
+
+    init(urlString: String) {
+        self.urlString = urlString
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init()
+        self.urlString = (coder.decodeObject(forKey: "urlString") as? String) ?? ""
+        self.ID = coder.decodeInteger(forKey: "ID")
     }
 }

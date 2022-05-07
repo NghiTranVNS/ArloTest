@@ -25,7 +25,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         imageView.image = nil
         indicatorView.stopAnimating()
         
-        if photo.urlString.count > 0{
+        if photo.urlString.count > 0 {
             if let url = URL(string: photo.urlString) {
                 indicatorView.startAnimating()
                 imageView.kf.setImage(with: url, placeholder: nil, options: nil) { [weak self] result in
