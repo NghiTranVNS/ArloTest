@@ -12,7 +12,7 @@ class PhotoViewModel: NSObject {
     let width = 7
     let height = 10
     let numberOfItemsPerPage: Int = 70
-    let pageMargin: CGFloat = 32
+    let pageMargin: CGFloat = 0 // 32 <-- Update this to change the distance between 2 sections
     let reloadTitle = "Reload All"
     
     var didAddNewPhoto: ((Photo) -> Void)?
